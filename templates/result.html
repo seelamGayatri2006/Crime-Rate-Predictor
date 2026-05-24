@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result — Crime Rate Predictor</title>
+    <link rel="icon" href="static/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="badge">Prediction Result</div>
+        <h1 class="title">Crime Rate Predictor</h1>
+        <p class="tagline">Data-driven insights for safer communities across India</p>
+    </header>
+
+    <section class="prediction">
+
+        <div class="result-header">
+            <h2>Your Prediction is Ready</h2>
+            <p>Based on historical NCRB data and Random Forest Regression model</p>
+        </div>
+
+        <div class="inputs-row">
+            <div class="input-chip">
+                <span class="chip-label">City</span>
+                <span class="chip-val">{{city_name}}</span>
+            </div>
+            <div class="input-chip">
+                <span class="chip-label">Crime Type</span>
+                <span class="chip-val">{{crime_type}}</span>
+            </div>
+            <div class="input-chip">
+                <span class="chip-label">Year</span>
+                <span class="chip-val">{{year}}</span>
+            </div>
+        </div>
+
+        <div class="graph-section">
+            <h3>Crime Rate Trend Graph</h3>
+            <img src="{{ graph_url }}" alt="Crime Rate Graph" class="graph-image">
+        </div>
+
+        <div class="results-grid">
+            <div class="result-card highlight">
+                <div class="rc-label">Prediction</div>
+                <div class="rc-value">{{crime_status}}</div>
+            </div>
+            <div class="result-card">
+                <div class="rc-label">Estimated Crime Rate</div>
+                <div class="rc-value">{{crime_rate}}</div>
+            </div>
+            <div class="result-card">
+                <div class="rc-label">Estimated Cases</div>
+                <div class="rc-value">{{cases}}</div>
+            </div>
+            <div class="result-card">
+                <div class="rc-label">Population (Lakhs)</div>
+                <div class="rc-value">{{population}}</div>
+            </div>
+        </div>
+
+        <div class="button2">
+            <a href="http://127.0.0.1:8990">
+                <input type="submit" class="btn" value="← Run Another Prediction">
+            </a>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer">
+            <p class="footer-name">Developed by &nbsp;<strong>SEELAM GAYATRI</strong></p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/seelam-karthik-62265831b/" target="_blank" title="LinkedIn">
+                    <img src="static/images/linkedin.png" alt="LinkedIn" width="20">
+                </a>
+                <a href="https://github.com/karthikprogr/seelamkarthik" target="_blank" title="GitHub">
+                    <img src="static/images/github.png" alt="GitHub" width="20">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

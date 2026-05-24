@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Rate Predictor</title>
+    <link rel="icon" href="static/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="badge">AI-Powered Analytics</div>
+        <h1 class="title">Crime Rate Predictor</h1>
+        <p class="tagline">Data-driven insights for safer communities across India</p>
+    </header>
+
+    <section class="section1">
+        <div class="form-card">
+            <div class="form-title">
+                <span></span>
+                Make a Prediction
+            </div>
+
+            <form action="/predict" method="POST">
+                <div class="field">
+                    <label>City</label>
+                    <select name="city">
+                        <option value="0">Ahmedabad</option>
+                        <option value="1">Bengaluru</option>
+                        <option value="2">Chennai</option>
+                        <option value="3">Coimbatore</option>
+                        <option value="4">Delhi</option>
+                        <option value="5">Ghaziabad</option>
+                        <option value="6">Hyderabad</option>
+                        <option value="7">Indore</option>
+                        <option value="8">Jaipur</option>
+                        <option value="9">Kanpur</option>
+                        <option value="10">Kochi</option>
+                        <option value="11">Kolkata</option>
+                        <option value="12">Kozhikode</option>
+                        <option value="13">Lucknow</option>
+                        <option value="14">Mumbai</option>
+                        <option value="15">Nagpur</option>
+                        <option value="16">Patna</option>
+                        <option value="17">Pune</option>
+                        <option value="18">Surat</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Crime Type</label>
+                    <select name="crime">
+                        <option value="9">Murder</option>
+                        <option value="8">Kidnapping</option>
+                        <option value="7">Economic Offences</option>
+                        <option value="6">Cyber Crimes</option>
+                        <option value="5">Crime against Women</option>
+                        <option value="4">Crime against Children</option>
+                        <option value="3">Crime against Senior Citizens</option>
+                        <option value="2">Crime against ST</option>
+                        <option value="1">Crime against SC</option>
+                        <option value="0">Crime by Juveniles</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Year</label>
+                    <select name="year" id="year-dropdown"></select>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="button">
+                    <input type="submit" class="btn" value="Generate Prediction →">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <h2 id="about">About This Application</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="num">19</div>
+                <div class="lbl">Metro Cities</div>
+            </div>
+            <div class="info-card">
+                <div class="num">10</div>
+                <div class="lbl">Crime Categories</div>
+            </div>
+            <div class="info-card">
+                <div class="num">93.2%</div>
+                <div class="lbl">Model Accuracy</div>
+            </div>
+            <div class="info-card">
+                <div class="num">2014–21</div>
+                <div class="lbl">Dataset Range</div>
+            </div>
+        </div>
+
+        <br>
+
+        <p id="introduction">
+            Crime rate prediction has become a vital tool for law enforcement agencies to understand 
+            patterns of crime and anticipate where criminal activity is likely to occur. By predicting 
+            future crime trends, agencies can better allocate resources to high-risk areas — leading to 
+            a measurable decrease in crime and improved public safety.
+            <br><br>
+            The dataset is prepared manually from the Indian National Crime Rate Bureau (NCRB) official 
+            website, covering statistics for 19 metropolitan cities from 2014 to 2021 across 10 crime 
+            categories including murder, kidnapping, cyber crimes, and crimes against women, children, 
+            senior citizens, SC, and ST communities.
+            <br><br>
+            This system uses scikit-learn's <strong style="color: var(--accent)">Random Forest Regression</strong> 
+            model, an ensemble learning technique that builds thousands of decision trees and averages 
+            their outputs for superior accuracy. The model achieves <strong style="color: var(--accent2)">93.20% accuracy</strong> 
+            on the test dataset.
+        </p>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <p class="footer-name">Developed by &nbsp;<strong>SEELAM GAYATRI</strong></p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/gayatri-seelam-2b6a78307/" target="_blank" title="LinkedIn">
+                    <img src="static/images/linkedin.png" alt="LinkedIn" width="20">
+                </a>
+                <a href="https://github.com/seelamGayatri2006/student-performance-predictor" target="_blank" title="GitHub">
+                    <img src="static/images/github.png" alt="GitHub" width="20">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/main.js"></script>
+</body>
+</html>
